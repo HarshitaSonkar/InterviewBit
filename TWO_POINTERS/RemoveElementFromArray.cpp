@@ -14,7 +14,7 @@ int Solution::removeElement(vector<int> &A, int B) {
     
 }
 
-/*
+/* ONE LINE SOLUTION
 A.erase(remove(A.begin(),A.end(),B),A.end());
 return A.size();
 */
