@@ -50,6 +50,10 @@ ListNode* Solution::rotateRight(ListNode* A, int B) {
 /*
 ListNode* temp_end = A;
     int length = 0;
+    
+    if(B == 0 || A == NULL){
+        return A;
+    }
     while(temp_end->next != NULL){
         temp_end = temp_end->next;
         length++;
