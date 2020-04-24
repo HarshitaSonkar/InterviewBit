@@ -52,3 +52,4 @@ if(!A || B == 1 || B == 0){
     }
     
     return head;
+}
