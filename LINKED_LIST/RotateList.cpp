@@ -44,6 +44,7 @@ ListNode* Solution::rotateRight(ListNode* A, int B) {
     head = curr;
     last->next = NULL;
     
+    
     return head;
 
 }
