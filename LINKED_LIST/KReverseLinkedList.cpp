@@ -26,7 +26,6 @@ if(!A || B == 1 || B == 0){
     }
     
     head = prev;
-
     prev = NULL;
     
     while(curr){
