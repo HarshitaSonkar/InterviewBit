@@ -1,4 +1,15 @@
-ListNode* head = A;
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+ListNode* Solution::reorderList(ListNode* A) {
+    
+// ***************************** SOLUTION 1*******************************************************
+    ListNode* head = A;
     int length = 0;
 
     // Get length of the list
@@ -91,4 +102,40 @@ ListNode* head = A;
         A -> next = prev;
         return realHead;
     }
+}
+
+//****************************************************SOLUTION 2******************************************************using STACK*******************
+
+ListNode* head = A;
+   stack<ListNode*> s;
+   if(head == NULL || head->next == NULL || head -> next -> next == NULL)
+         return A;
+    int count=0,f=0;
+        while(head!=NULL){
+              head = head -> next;
+              count++;
+        }
+        if(count%2!=0){
+            count = count/2+1;
+            f = 1;
+        }else
+            count/= 2;
+            head = A;
+ while(count--){
+        head=head -> next;
+    }
+    while(head!=NULL){
+        s.push(head);
+        head=head -> next;
+    }
+    head=a;
+    while(!s.empty()){
+        ListNode* temp = head -> next;
+         head->next = s.top();
+         s.top() -> next = temp;
+         head = temp;
+         s.pop();
+    }
+         head -> next = NULL;
+   return A;
 }
